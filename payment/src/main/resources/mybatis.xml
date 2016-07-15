@@ -9,7 +9,7 @@
 	</typeAliases>
 
 	<mappers>
-		<mapper resource="com/wjx/ehr/attendance/mapper/UserInfoMapper.xml" />
+		<mapper resource="com/wjx/ehr/system/mapper/UserInfoMapper.xml" />
 		<mapper resource="com/wjx/ehr/attendance/mapper/AttendanceMapper.xml" />
 	</mappers>
 </configuration>

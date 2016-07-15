@@ -1,5 +1,7 @@
 package com.wjx.ehr.attendance.dao;
 
+import java.util.List;
+
 import com.wjx.ehr.attendance.entity.Attendance;
 
 public interface AttendanceMapper {
@@ -50,4 +52,7 @@ public interface AttendanceMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Attendance record);
+    
+    
+    int insertList(List<Attendance> list);
 }
