@@ -20,19 +20,21 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
 	
-<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
-<!-- 		<property name="driverClassName" value="${db.driver}"></property> -->
-<!-- 		<property name="url" value="${db.url}"></property> -->
-<!-- 		<property name="username" value="${db.user}"></property> -->
-<!-- 		<property name="password" value="${db.password}"></property> -->
-<!-- 	</bean> -->
-<!-- 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
-<!-- 		<property name="configLocation" value="classpath:mybatis.xml"></property> -->
-<!-- 		<property name="dataSource" ref="dataSource" /> -->
-<!-- 	</bean> -->
-<!-- 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> -->
-<!-- 		<property name="basePackage" value="com.wjx.ehr" /> -->
-<!-- 	</bean> -->
+	<context:property-placeholder location="classpath:db.properties" />
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${db.driver}"></property>
+		<property name="url" value="${db.url}"></property>
+		<property name="username" value="${db.user}"></property>
+		<property name="password" value="${db.password}"></property>
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis.xml"></property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.wjx.ehr" />
+	</bean>
 	<!-- 事务管理器 -->
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
