@@ -11,14 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class AttendanceService {
 
 	
-	public boolean uploadFile(String destinationDir, MultipartFile file, String filename)
-            {
-         try {   
-             SaveFileFromInputStream(file.getInputStream(), destinationDir, filename);   
-         } catch (IOException e) {   
-            
-             return false;   
-         }   
+	public boolean uploadFile(String destinationDir, MultipartFile file, String filename) throws Exception{
+        SaveFileFromInputStream(file.getInputStream(), destinationDir, filename);   
         return true;
     }
      

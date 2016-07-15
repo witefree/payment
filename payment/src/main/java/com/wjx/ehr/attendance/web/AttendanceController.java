@@ -44,7 +44,12 @@ public class AttendanceController {
 	@RequestMapping(value="upload",method=RequestMethod.POST)
 	@ResponseBody
 	public String upload(HttpServletRequest request,@RequestParam("file") MultipartFile file){
-		attendanceService.uploadFile("E:/work", file, "text.xls");
+		try {
+			attendanceService.uploadFile("E:/work", file, "text.xls");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "false";
+		}
 		return "ok";
 	}
 	

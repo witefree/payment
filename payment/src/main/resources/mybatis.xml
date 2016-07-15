@@ -4,17 +4,12 @@
 <configuration>
 
 	<typeAliases> 
-	
-		<typeAlias type="com.wjx.ehr.system.entity.UserInfo"
-			alias="TomApiUser" />
-	
+		<typeAlias type="com.wjx.ehr.system.entity.UserInfo" alias="TomApiUser" />
+		<typeAlias type="com.wjx.ehr.attendance.entity.Attendance" alias="Attendance" />
 	</typeAliases>
 
 	<mappers>
-	
-	<mapper
-			resource="com/wjx/ehr/system/mapper/UserInfoMapper.xml" />
-	
+		<mapper resource="com/wjx/ehr/attendance/mapper/UserInfoMapper.xml" />
+		<mapper resource="com/wjx/ehr/attendance/mapper/AttendanceMapper.xml" />
 	</mappers>
-
 </configuration>
