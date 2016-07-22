@@ -57,7 +57,14 @@ public class ExcleUtil {
 					att.setCasualLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(5))));
 					att.setAnnualLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(6))));
 					att.setRest(TransTypeUtil.String2Double(getValue(hssfRow.getCell(7))));
-					att.setAttendanceDate((hssfRow.getCell(8)).getDateCellValue());
+					att.setParentalLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(8))));
+					att.setMarryLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(9))));
+					att.setInjuryLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(10))));
+					att.setFuneralLeave(TransTypeUtil.String2Double(getValue(hssfRow.getCell(11))));
+					att.setWorkOvertime(TransTypeUtil.String2Double(getValue(hssfRow.getCell(12))));
+					att.setWeekOvertime(TransTypeUtil.String2Double(getValue(hssfRow.getCell(13))));
+					att.setHolidayOvertime(TransTypeUtil.String2Double(getValue(hssfRow.getCell(14))));
+					att.setAttendanceDate((hssfRow.getCell(15)).getDateCellValue());
 					attList.add(att);
 				}
 			}
@@ -87,7 +94,14 @@ public class ExcleUtil {
 					att.setCasualLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(5))));
 					att.setAnnualLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(6))));
 					att.setRest(TransTypeUtil.String2Double(getValue(xssfRow.getCell(7))));
-					att.setAttendanceDate((xssfRow.getCell(8)).getDateCellValue());
+					att.setParentalLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(8))));
+					att.setMarryLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(9))));
+					att.setInjuryLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(10))));
+					att.setFuneralLeave(TransTypeUtil.String2Double(getValue(xssfRow.getCell(11))));
+					att.setWorkOvertime(TransTypeUtil.String2Double(getValue(xssfRow.getCell(12))));
+					att.setWeekOvertime(TransTypeUtil.String2Double(getValue(xssfRow.getCell(13))));
+					att.setHolidayOvertime(TransTypeUtil.String2Double(getValue(xssfRow.getCell(14))));
+					att.setAttendanceDate((xssfRow.getCell(15)).getDateCellValue());
 					attList.add(att);
 				}
 			}

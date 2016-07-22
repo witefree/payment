@@ -50,4 +50,6 @@ public interface UserInfoMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(UserInfo record);
+    
+    UserInfo selectByCode(String code);
 }

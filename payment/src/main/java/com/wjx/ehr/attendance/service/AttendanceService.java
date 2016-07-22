@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.wjx.ehr.attendance.dao.AttendanceMapper;
 import com.wjx.ehr.attendance.entity.Attendance;
+import com.wjx.ehr.salary.service.SalaryService;
 
 import utils.ExcleUtil;
 
@@ -20,12 +21,15 @@ public class AttendanceService {
 	
 	@Autowired
 	private AttendanceMapper attendanceMapper;
+	@Autowired
+	private SalaryService salaryService;
 
 	public boolean uploadFile(String destinationDir, MultipartFile file, String filename) throws Exception {
 		// SaveFileFromInputStream(file.getInputStream(), destinationDir,
 		// filename);
 		List<Attendance> attList=ExcleUtil.mainRead(file);
 		attendanceMapper.insertList(attList);
+		salaryService.salary(attList);
 		return true;
 	}
 

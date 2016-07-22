@@ -6,10 +6,16 @@
 	<typeAliases> 
 		<typeAlias type="com.wjx.ehr.system.entity.UserInfo" alias="TomApiUser" />
 		<typeAlias type="com.wjx.ehr.attendance.entity.Attendance" alias="Attendance" />
+		<typeAlias type="com.wjx.ehr.salary.entity.Salary" alias="Salary"/>
+		<typeAlias type="com.wjx.ehr.salary.entity.SocialSecurityStandard" alias="SocialSecurityStandard"/>
+		<typeAlias type="com.wjx.ehr.salary.entity.WageSalary" alias="WageSalary"/>
 	</typeAliases>
 
 	<mappers>
 		<mapper resource="com/wjx/ehr/system/mapper/UserInfoMapper.xml" />
 		<mapper resource="com/wjx/ehr/attendance/mapper/AttendanceMapper.xml" />
+		<mapper resource="com/wjx/ehr/salary/mapper/SalaryMapper.xml" />
+		<mapper resource="com/wjx/ehr/salary/mapper/SocialSecurityStandardMapper.xml" />
+		<mapper resource="com/wjx/ehr/salary/mapper/WageSalaryMapper.xml" />
 	</mappers>
 </configuration>
