@@ -2,7 +2,10 @@ package com.wjx.ehr.attendance.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.wjx.ehr.attendance.entity.Attendance;
+import com.wjx.ehr.utils.Page;
 
 public interface AttendanceMapper {
     /**
@@ -55,4 +58,6 @@ public interface AttendanceMapper {
     
     
     int insertList(List<Attendance> list);
+    
+    List<Attendance> queryList(@Param("name")String name,Page page);
 }

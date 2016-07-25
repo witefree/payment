@@ -3,7 +3,6 @@ package com.wjx.ehr.attendance.service;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.wjx.ehr.attendance.dao.AttendanceMapper;
 import com.wjx.ehr.attendance.entity.Attendance;
 import com.wjx.ehr.salary.service.SalaryService;
-
-import utils.ExcleUtil;
+import com.wjx.ehr.utils.ExcleUtil;
+import com.wjx.ehr.utils.Page;
 
 @Service
 public class AttendanceService {
@@ -24,6 +23,14 @@ public class AttendanceService {
 	@Autowired
 	private SalaryService salaryService;
 
+	public List<Attendance> list(String name,int startRowIndex,int pageSize,String dir, String sort){
+		Page<Attendance> page=new Page<Attendance>();
+//		page.setPageNo(startRowIndex);
+//		page.setPageSize(pageSize);
+		List<Attendance> list=attendanceMapper.queryList(name, page);
+		return list; 
+	}
+	
 	public boolean uploadFile(String destinationDir, MultipartFile file, String filename) throws Exception {
 		// SaveFileFromInputStream(file.getInputStream(), destinationDir,
 		// filename);
